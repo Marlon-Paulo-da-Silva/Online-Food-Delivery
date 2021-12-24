@@ -29,7 +29,11 @@
                     <input type="number" class="form-control" id="number" name="order_number" placeholder="Número de ordem">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                    <label for="exampleInputFile">Adicionado em</label>
+                    <input type="number" class="form-control" id="number" name="order_number" placeholder="Número de ordem">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">Adicionado em</label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="exampleInputFile">
