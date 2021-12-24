@@ -253,6 +253,18 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Categorias',
+            'url'         => 'category/add',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Adicionar Categoria',
+                    'url'  => 'category/add',
+                ],                
+            ],
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

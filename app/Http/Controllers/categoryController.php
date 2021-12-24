@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class categoryController extends Controller
 {
-    //
+    public function index(){
+        return view('Backend.category.addCategory');
+    }
 }
