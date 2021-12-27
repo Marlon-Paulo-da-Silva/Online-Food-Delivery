@@ -29,6 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /* Category */
 
 Route::get('/category/add', [categoryController::class, 'index'])->name('show_cate_table');
+Route::post('/category/save', [categoryController::class, 'save'])->name('cate_save');
 
 /* End Category */
 

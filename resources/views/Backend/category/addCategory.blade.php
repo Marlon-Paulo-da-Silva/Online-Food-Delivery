@@ -10,15 +10,24 @@
     <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="offset-3 col-md-6 my-lg-5">
+          @if(Session::get('sms'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{ Session::get('sms') }}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
             <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+            <div class="card">
+              <div class="card-header text-center">
+                <h3 class="card-title">Adicionar categoria</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" method="post">
+              <form role="form" action="{{ route('cate_save') }}" method="post">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="category_name">Nome da Categoria</label>
@@ -26,33 +35,25 @@
                   </div>
                   <div class="form-group">
                     <label for="ordem">Numero de ordem</label>
-                    <input type="number" class="form-control" id="number" name="order_number" placeholder="Número de ordem">
+                    <input type="number" class="form-control" id="ordem" name="order_number" placeholder="Número de ordem">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Adicionado em</label>
-                    <input type="number" class="form-control" id="number" name="order_number" placeholder="Número de ordem">
+                    <label for="added_on">Adicionado em</label>
+                    <input type="date" class="form-control" id="number" name="added_on" placeholder="Número de ordem">
                   </div>
+    
                   <div class="form-group">
-                    <label for="exampleInputFile">Adicionado em</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
+                    <label for="added_on">Status da Categoria</label>
+                    <div class="radio">
+                      <input type="radio" name="category_status" value="1">Ativo               
+                      <input type="radio" name="category_status" value="0">Inativo               
                     </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Submit</button>
                 </div>
               </form>
             </div>

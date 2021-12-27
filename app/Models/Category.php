@@ -11,5 +11,5 @@ class Category extends Model
 
     protected $fillable = [
         'category_name','order_number','category_status','added_on'
-    ]
+    ];
 }
