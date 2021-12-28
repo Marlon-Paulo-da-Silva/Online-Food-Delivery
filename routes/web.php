@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\categoryController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +28,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /* Category */
 
-Route::get('/category/add', [categoryController::class, 'index'])->name('show_cate_table');
-Route::post('/category/save', [categoryController::class, 'save'])->name('cate_save');
+Route::get('/category/add', [CategoryController::class, 'index'])->name('show_cate_table');
+Route::post('/category/save', [CategoryController::class, 'save'])->name('cate_save');
+Route::get('/category/manage', [CategoryController::class, 'manage'])->name('cate_manager');
 
 /* End Category */
 

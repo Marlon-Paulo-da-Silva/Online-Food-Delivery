@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class categoryController extends Controller
@@ -20,5 +21,11 @@ class categoryController extends Controller
         $category->save();
 
         return back()->with('sms', 'Categoria Salva');
+    }
+
+    public function manage(){
+        $categories = Category::all();
+
+        return view('Backend.category.manageCategory', [compact('categories')]);
     }
 }

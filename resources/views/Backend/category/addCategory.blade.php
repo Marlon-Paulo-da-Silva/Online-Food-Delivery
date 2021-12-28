@@ -18,7 +18,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            @endif
+          @endif
             <!-- general form elements -->
             <div class="card">
               <div class="card-header text-center">
