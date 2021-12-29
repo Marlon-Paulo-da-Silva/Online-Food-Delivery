@@ -1,10 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\console;
+
+use Illuminate\Http\Request;
 
 use App\Models\Category;
 
-use Illuminate\Http\Request;
+
+
+
 
 class CategoryController extends Controller
 {
@@ -55,4 +60,14 @@ class CategoryController extends Controller
 
         return back();
     }
+    public function update(Request $request){
+        $category = Category::find($request->category_id);
+        $category->category_name = $request->category_name;
+        $category->order_number = $request->order_number;
+
+    
+        $category->save();
+
+        return redirect('/category/manage')->with('sms', 'Alterado com sucesso');
+     }
 }

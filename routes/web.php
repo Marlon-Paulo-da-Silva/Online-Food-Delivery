@@ -37,6 +37,7 @@ Route::get('/category/manage', [CategoryController::class, 'manage'])->name('cat
 Route::get('/category/active/{id}', [CategoryController::class, 'active'])->name('cate_active');
 Route::get('/category/inactive/{id}', [CategoryController::class, 'inactive'])->name('cate_inactive');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('cate_delete');
+Route::post('/category/update', [CategoryController::class, 'update'])->name('cate_update');
 
 /* End Category */
 

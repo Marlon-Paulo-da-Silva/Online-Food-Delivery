@@ -39,7 +39,7 @@
                   </div>
                   <div class="form-group">
                     <label for="added_on">Adicionado em</label>
-                    <input type="date" class="form-control" id="number" name="added_on" placeholder="Número de ordem">
+                    <input type="date" class="form-control" id="number" name="added_on">
                   </div>
     
                   <div class="form-group">
@@ -53,7 +53,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Submit</button>
+                  <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Salvar</button>
                 </div>
               </form>
             </div>

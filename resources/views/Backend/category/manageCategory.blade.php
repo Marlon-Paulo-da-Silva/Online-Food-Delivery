@@ -7,7 +7,18 @@
 @stop
 
 @section('content')
+
 <div class="card">
+  {{-- Alerta de sucesso --}}
+    @if(Session::get('sms'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ Session::get('sms') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endif
+    {{-- final do Alerta de sucesso --}}
   <div class="card-header">
     <h3 class="card-title">DataTable with default features</h3>
   </div>
@@ -46,14 +57,56 @@
                         <i class="fas fa-toggle-off" title="Clique para Ativar"></i>
                       </a>
                       @endif
-                      <a class="btn btn-outline-dark" href="#">
+                      <a type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $cate->category_id }}">
                         <i class="fas fa-edit" title="Clique para editar"></i>
                       </a>
                       <a class="btn btn-outline-danger" href="/category/delete/{{ $cate->category_id }}">
-                       <i class="fas fa-trash" title="Clique para apagar"></i>
+                       <i class="fas fa-trash" title="Clique para 
+                       apagar"></i>
                       </a>
                 </td>
               </tr>
+
+              {{-- Modal --}}
+                <div class="modal fade" id="edit{{ $cate->category_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $cate->category_id }}" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <form role="form" action="{{ route('cate_update') }}" method="post">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Alterar Categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card">
+      
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                          @csrf
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="category_name">Nome da Categoria</label>
+                              <input type="text" class="form-control" id="category_name" name="category_name" value="{{ $cate->category_name }}">
+                              <input type="hidden" class="form-control" id="category_id" name="category_id" value="{{ $cate->category_id }}">
+                            </div>
+                            <div class="form-group">
+                              <label for="ordem">Numero de ordem</label>
+                              <input type="number" class="form-control" id="ordem" name="order_number" value="{{ $cate->order_number }}">
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Atualizar</button>
+                      </div>
+                    </div>
+                    </form>
+                  
+                  </div>
+                </div>
+                {{-- End Modal --}}
               @endforeach
               
             </tbody>
