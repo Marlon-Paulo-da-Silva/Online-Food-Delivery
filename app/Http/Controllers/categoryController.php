@@ -26,6 +26,6 @@ class categoryController extends Controller
     public function manage(){
         $categories = Category::all();
 
-        return view('Backend.category.manageCategory', [compact('categories')]);
+        return view('Backend.category.manageCategory', compact('categories'));
     }
 }
