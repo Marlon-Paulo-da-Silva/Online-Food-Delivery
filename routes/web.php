@@ -31,8 +31,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/category/add', [CategoryController::class, 'index'])->name('show_cate_table');
 Route::post('/category/save', [CategoryController::class, 'save'])->name('cate_save');
 Route::get('/category/manage', [CategoryController::class, 'manage'])->name('cate_manager');
+
+// Crud Category
+
 Route::get('/category/active/{id}', [CategoryController::class, 'active'])->name('cate_active');
 Route::get('/category/inactive/{id}', [CategoryController::class, 'inactive'])->name('cate_inactive');
+Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('cate_delete');
 
 /* End Category */
 

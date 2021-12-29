@@ -37,22 +37,21 @@
                 <td class="sorting_1">{{ $cate->order_number }}</td>
                 <td>{{ $cate->added_on }}</td>
                 <td>
-                  
-                  <div class="dropdown show">
-                    <a class="btn btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mais
-                    </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Editar</a>
-                      <a class="dropdown-item" href="#">Deletar</a>
                       @if($cate->category_status == 1)
-                      <a class="dropdown-item" href="/category/inactive/{{ $cate->category_id }}">Ativo</a>
+                      <a class="btn btn-outline-success" href="/category/inactive/{{ $cate->category_id }}">
+                        <i class="fas fa-toggle-on" title="Clique para Inativar"></i>
+                      </a>
                       @else
-                      <a class="dropdown-item" href="/category/active/{{ $cate->category_id }}">Desativado</a>
+                      <a class="btn btn-outline-light" href="/category/active/{{ $cate->category_id }}">
+                        <i class="fas fa-toggle-off" title="Clique para Ativar"></i>
+                      </a>
                       @endif
-                    </div>
-                  </div>
+                      <a class="btn btn-outline-dark" href="#">
+                        <i class="fas fa-edit" title="Clique para editar"></i>
+                      </a>
+                      <a class="btn btn-outline-danger" href="/category/delete/{{ $cate->category_id }}">
+                       <i class="fas fa-trash" title="Clique para apagar"></i>
+                      </a>
                 </td>
               </tr>
               @endforeach
