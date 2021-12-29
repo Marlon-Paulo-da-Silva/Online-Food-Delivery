@@ -27,12 +27,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Category */
-
-Route::get('/category/add', [CategoryController::class, 'index'])->name('show_cate_table');
-Route::post('/category/save', [CategoryController::class, 'save'])->name('cate_save');
-Route::get('/category/manage', [CategoryController::class, 'manage'])->name('cate_manager');
-
 // Crud Category
+
+Route::get('/category/add', [CategoryController::class, 'index'])->name('show_cate_table')->middleware('auth');
+Route::post('/category/save', [CategoryController::class, 'save'])->name('cate_save')->middleware('auth');
+Route::get('/category/manage', [CategoryController::class, 'manage'])->name('cate_manager')->middleware('auth');
+
+
 
 Route::get('/category/active/{id}', [CategoryController::class, 'active'])->name('cate_active');
 Route::get('/category/inactive/{id}', [CategoryController::class, 'inactive'])->name('cate_inactive');
@@ -40,6 +41,20 @@ Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name
 Route::post('/category/update', [CategoryController::class, 'update'])->name('cate_update');
 
 /* End Category */
+
+// Crud DeliveryPerson
+
+Route::get('/deliveryperson/add', [CategoryController::class, 'index'])->name('show_deliperson_table')->middleware('auth');
+Route::post('/deliveryperson/save', [CategoryController::class, 'deliveryperson_save'])->name('dp_save')->middleware('auth');
+Route::get('/deliveryperson/manage', [CategoryController::class, 'deliveryperson_manage'])->name('deliperson_manager')->middleware('auth');
+
+
+Route::get('/deliveryperson/active/{id}', [CategoryController::class, 'active'])->name('deliperson_active');
+Route::get('/deliveryperson/inactive/{id}', [CategoryController::class, 'inactive'])->name('deliperson_inactive');
+Route::get('/deliveryperson/delete/{id}', [CategoryController::class, 'delete'])->name('deliperson_delete');
+Route::post('/deliveryperson/update', [CategoryController::class, 'update'])->name('deliperson_update');
+
+/* End DeliveryPerson */
 
 
 

@@ -264,8 +264,24 @@ return [
                     'url'  => 'category/add',
                 ],                
                 [
-                    'text' => 'Gerenciar Categoria',
+                    'text' => 'Gerenciar Categorias',
                     'url'  => 'category/manage',
+                ],                
+            ],
+        ],
+        [
+            'text'        => 'Entregadores',
+            'url'         => 'deliveryperson/add',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Adicionar Entregador',
+                    'url'  => 'deliveryperson/add',
+                ],                
+                [
+                    'text' => 'Gerenciar Entregador',
+                    'url'  => 'deliveryperson/manage',
                 ],                
             ],
         ],
