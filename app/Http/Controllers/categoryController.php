@@ -6,7 +6,7 @@ use App\Models\Category;
 
 use Illuminate\Http\Request;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     public function index(){
         return view('Backend.category.addCategory');
@@ -27,5 +27,24 @@ class categoryController extends Controller
         $categories = Category::all();
 
         return view('Backend.category.manageCategory', compact('categories'));
+    }
+    
+    public function active($category_id){
+        $category = Category::find($category_id);
+
+        $category->category_status = 1;
+        $category->save();
+
+
+        return back();
+    }
+    public function inactive($category_id){
+        $category = Category::find($category_id);
+
+        $category->category_status = 0;
+        $category->save();
+
+
+        return back();
     }
 }

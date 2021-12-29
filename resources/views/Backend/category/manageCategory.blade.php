@@ -44,9 +44,13 @@
                     </a>
                   
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Pendente</a>
                       <a class="dropdown-item" href="#">Editar</a>
                       <a class="dropdown-item" href="#">Deletar</a>
+                      @if($cate->category_status == 1)
+                      <a class="dropdown-item" href="/category/inactive/{{ $cate->category_id }}">Ativo</a>
+                      @else
+                      <a class="dropdown-item" href="/category/active/{{ $cate->category_id }}">Desativado</a>
+                      @endif
                     </div>
                   </div>
                 </td>
