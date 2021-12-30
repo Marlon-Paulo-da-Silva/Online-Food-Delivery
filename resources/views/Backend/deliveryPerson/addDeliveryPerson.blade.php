@@ -26,16 +26,20 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{ route('cate_save') }}" method="post">
+              <form role="form" action="{{ route('dp_save') }}" method="post">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="category_name">Nome da Categoria</label>
-                    <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Nome da categoria">
+                    <label for="delivery_person_name">Nome do entregador</label>
+                    <input type="text" class="form-control" id="delivery_person_name" name="delivery_person_name" placeholder="Nome da categoria">
                   </div>
                   <div class="form-group">
-                    <label for="ordem">Numero de ordem</label>
-                    <input type="number" class="form-control" id="ordem" name="order_number" placeholder="Número de ordem">
+                    <label for="delivery_person_phone_number">Número de telefone</label>
+                    <input type="number" class="form-control" id="delivery_person_phone_number" name="delivery_person_phone_number" placeholder="Número de telefone">
+                  </div>
+                  <div class="form-group">
+                    <label for="delivery_person_password">Senha</label>
+                    <input type="password" class="form-control" id="delivery_person_password" name="delivery_person_password" placeholder="Senha">
                   </div>
                   <div class="form-group">
                     <label for="added_on">Adicionado em</label>
@@ -43,10 +47,10 @@
                   </div>
     
                   <div class="form-group">
-                    <label for="added_on">Status da Categoria</label>
+                    <label for="delivery_person_status">Status do entregador</label>
                     <div class="radio">
-                      <input type="radio" name="category_status" value="1">Ativo               
-                      <input type="radio" name="category_status" value="0">Inativo               
+                      <input type="radio" name="delivery_person_status" value="1">Ativo               
+                      <input type="radio" name="delivery_person_status" value="0">Inativo               
                     </div>
                   </div>
                 </div>
