@@ -50,10 +50,10 @@ Route::post('/deliveryperson/save', [DeliveryPersonController::class, 'deliveryp
 Route::get('/deliveryperson/manage', [DeliveryPersonController::class, 'deliveryperson_manage'])->name('dp_manager')->middleware('auth');
 
 
-// Route::get('/deliveryperson/active/{id}', [CategoryController::class, 'active'])->name('deliperson_active');
-// Route::get('/deliveryperson/inactive/{id}', [CategoryController::class, 'inactive'])->name('deliperson_inactive');
-// Route::get('/deliveryperson/delete/{id}', [CategoryController::class, 'delete'])->name('deliperson_delete');
-// Route::post('/deliveryperson/update', [CategoryController::class, 'update'])->name('deliperson_update');
+Route::get('/deliveryperson/active/{id}', [DeliveryPersonController::class, 'dp_active'])->name('deliperson_active');
+Route::get('/deliveryperson/inactive/{id}', [DeliveryPersonController::class, 'dp_inactive'])->name('deliperson_inactive');
+Route::get('/deliveryperson/delete/{deliveryperson_id}', [DeliveryPersonController::class, 'dp_delete'])->name('deliperson_delete');
+// Route::post('/deliveryperson/update', [CategoryController::class, 'dp_update'])->name('deliperson_update');
 
 /* End DeliveryPerson */
 

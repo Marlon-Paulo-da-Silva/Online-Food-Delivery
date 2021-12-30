@@ -25,6 +25,44 @@ class deliveryPersonController extends Controller
 
         return back()->with('sms', 'Entregador Salvo');
     }
+    
+    public function deliveryperson_manage (){
+
+        $deliveryperson = Delivery_person::all();
+
+        return view('Backend.deliveryPerson.manageDeliveryPerson', compact('deliveryperson'));
+    }
+    
+    public function deliveryperson_delete ($deliveryperson_id){
+
+        $deliveryperson = Delivery_person::find($deliveryperson_id);
+
+        $deliveryperson->delete();
+
+        return back()->with('sms', 'Cadastro do entregador deletado');
+    }
+
+    public function dp_inactive ($deliveryperson_id){
+
+        $deliveryperson = Delivery_person::find($deliveryperson_id);
+
+        $deliveryperson->delivery_person_status = 0;
+        
+        $deliveryperson->save();
+
+        return back();
+    }
+
+    public function dp_active ($deliveryperson_id){
+
+        $deliveryperson = Delivery_person::find($deliveryperson_id);
+
+        $deliveryperson->delivery_person_status = 1;
+        
+        $deliveryperson->save();
+
+        return back();
+    }
 
 
 }

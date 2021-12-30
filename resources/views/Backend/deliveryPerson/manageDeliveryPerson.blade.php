@@ -20,7 +20,7 @@
     @endif
     {{-- final do Alerta de sucesso --}}
   <div class="card-header">
-    <h3 class="card-title">Dados dos entregadores</h3>
+    <h3 class="card-title">Controle dos entregadores</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
@@ -32,43 +32,42 @@
             <thead>
               <tr role="row">
                 <th>SL</th>
-                <th>Nome da Categoria</th>
-                <th>Número da Ordem</th>
-                <th>Data de criação</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Criado em</th>
                 <th>Ação</th>
               </tr>
             </thead>
             <tbody>
               @php($i = 1)
-              @foreach($categories as $cate)
+              @foreach($deliveryperson as $dp) 
               
               <tr role="row" class="odd">
                 <td class="">{{ $i++ }}</td>
-                <td>{{ $cate->category_name }}</td>
-                <td class="sorting_1">{{ $cate->order_number }}</td>
-                <td>{{ $cate->added_on }}</td>
+                <td>{{ $dp->delivery_person_name }}</td>
+                <td class="sorting_1">{{ $dp->delivery_person_phone_number }}</td>
+                <td>{{ $dp->added_on }}</td>
                 <td>
-                      @if($cate->category_status == 1)
-                      <a class="btn btn-outline-success" href="/category/inactive/{{ $cate->category_id }}">
+                      @if($dp->delivery_person_status == 1)
+                      <a class="btn btn-outline-success" href="/deliveryperson/inactive/{{ $dp->delivery_person_id }}">
                         <i class="fas fa-toggle-on" title="Clique para Inativar"></i>
                       </a>
                       @else
-                      <a class="btn btn-outline-light" href="/category/active/{{ $cate->category_id }}">
+                      <a class="btn btn-outline-light" href="/deliveryperson/active/{{ $dp->delivery_person_id }}">
                         <i class="fas fa-toggle-off" title="Clique para Ativar"></i>
                       </a>
                       @endif
-                      <a type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $cate->category_id }}">
+                      <a type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $dp->delivery_person_id }}">
                         <i class="fas fa-edit" title="Clique para editar"></i>
                       </a>
-                      <a class="btn btn-outline-danger" href="/category/delete/{{ $cate->category_id }}">
-                       <i class="fas fa-trash" title="Clique para 
-                       apagar"></i>
+                      <a class="btn btn-outline-danger" href="/deliveryperson/delete/{{ $dp->delivery_person_id }}">
+                       <i class="fas fa-trash" title="Clique para apagar"></i>
                       </a>
                 </td>
               </tr>
 
               {{-- Modal --}}
-                <div class="modal fade" id="edit{{ $cate->category_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $cate->category_id }}" aria-hidden="true">
+                {{-- <div class="modal fade" id="edit{{ $dp->delivery_person_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $dp->delivery_person_id }}" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <form role="form" action="{{ route('cate_update') }}" method="post">
                     <div class="modal-content">
@@ -86,8 +85,8 @@
                           @csrf
                           <div class="card-body">
                             <div class="form-group">
-                              <label for="category_name">Nome da Categoria</label>
-                              <input type="text" class="form-control" id="category_name" name="category_name" value="{{ $cate->category_name }}">
+                              <label for="category_name">Nome do entregador</label>
+                              <input type="text" class="form-control" id="delivery_person_name" name="delivery_person_name" value="{{ $dp->delivery_person_name }}">
                               <input type="hidden" class="form-control" id="category_id" name="category_id" value="{{ $cate->category_id }}">
                             </div>
                             <div class="form-group">
@@ -105,9 +104,9 @@
                     </form>
                   
                   </div>
-                </div>
+                </div> --}}
                 {{-- End Modal --}}
-              @endforeach
+              @endforeach  
               
             </tbody>
             <tfoot>
