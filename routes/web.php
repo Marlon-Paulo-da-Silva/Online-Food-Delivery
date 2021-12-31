@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeliveryPersonController;
 use App\Http\Controllers\CouponsController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +72,18 @@ Route::get('/coupons/delete/{coupon_id}', [CouponsController::class, 'coupon_del
 Route::post('/coupons/update', [CouponsController::class, 'coupon_update'])->name('c_update');
 
 /* End Coupons */
+
+// Crud Products
+
+Route::get('/products/add', [ProductController::class, 'index'])->name('show_p_table')->middleware('auth');
+Route::post('/products/save', [ProductController::class, 'product_save'])->name('p_save')->middleware('auth');
+Route::get('/products/manage', [ProductController::class, 'product_manage'])->name('p_manager')->middleware('auth');
+
+
+Route::get('/products/active/{id}', [ProductController::class, 'product_active'])->name('p_active');
+Route::get('/products/inactive/{id}', [ProductController::class, 'product_inactive'])->name('p_inactive');
+Route::get('/products/delete/{coupon_id}', [ProductController::class, 'product_delete'])->name('p_delete');
+Route::post('/products/update', [ProductController::class, 'product_update'])->name('p_update');
+
+/* End Products */
 

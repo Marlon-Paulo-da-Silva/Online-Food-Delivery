@@ -262,12 +262,12 @@ return [
                 [
                     'text' => 'Adicionar Categoria',
                     'url'  => 'category/add',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-plus-circle',
                 ],                
                 [
                     'text' => 'Gerenciar Categorias',
                     'url'  => 'category/manage',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-edit',
                 ],                
             ],
         ],
@@ -280,12 +280,12 @@ return [
                 [
                     'text' => 'Adicionar Entregador',
                     'url'  => 'deliveryperson/add',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-plus-circle',
                 ],                
                 [
                     'text' => 'Gerenciar Entregador',
                     'url'  => 'deliveryperson/manage',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-edit',
                 ],                
             ],
         ],
@@ -298,12 +298,30 @@ return [
                 [
                     'text' => 'Adicionar Cupom',
                     'url'  => 'coupons/add',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-plus-circle',
                 ],                
                 [
                     'text' => 'Gerenciar Cupons',
                     'url'  => 'coupons/manage',
-                    'icon' => 'fas fa-fw fa-ellipsis-h',
+                    'icon' => 'fas fa-fw fa-edit',
+                ],                
+            ],
+        ],
+        [
+            'text'        => 'Produtos',
+            'url'         => 'products/add',
+            'icon'        => 'fas fa-fw fa-utensils',
+            'label_color' => 'warning',
+            'submenu' => [
+                [
+                    'text' => 'Adicionar Produto',
+                    'url'  => 'products/add',
+                    'icon' => 'fas fa-fw fa-plus-circle',
+                ],                
+                [
+                    'text' => 'Gerenciar Produto',
+                    'url'  => 'products/manage',
+                    'icon' => 'fas fa-fw fa-edit',
                 ],                
             ],
         ],
