@@ -71,12 +71,14 @@ class CouponsController extends Controller
 
         $coupon = Coupon::find($request->coupon_id);
 
-        $coupon->delivery_person_name = $request->delivery_person_name;
-        
-        $coupon->delivery_person_phone_number = $request->delivery_person_phone_number;
+        $coupon->coupon_code = $request->coupon_code;
+        $coupon->coupon_type = $request->coupon_type;
+        $coupon->coupon_value = $request->coupon_value;
+        $coupon->cart_min_value = $request->cart_min_value;
+        $coupon->expired_on = $request->expired_on;
         
         $coupon->save();
 
-        return redirect('/deliveryperson/manage')->with('sms', $request->deliveryperson_id);
+        return redirect('/coupons/manage')->with('sms', 'Cupom atualizado');
     }
 }

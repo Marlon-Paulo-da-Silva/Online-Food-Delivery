@@ -74,7 +74,7 @@ class deliveryPersonController extends Controller
         
         $deliveryperson->save();
 
-        return redirect('/deliveryperson/manage')->with('sms', $request->deliveryperson_id);
+        return redirect('/deliveryperson/manage')->with('sms', 'Cadastro do entregador atualizado');
     }
 
 

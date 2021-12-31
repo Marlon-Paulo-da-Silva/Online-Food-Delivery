@@ -54,7 +54,7 @@
                 <td class="sorting_1">{{ $c->expired_on }}</td>
                 <td>{{ $c->added_on }}</td>
                 <td>
-                      @if($c->delivery_person_status == 1)
+                      @if($c->coupon_status == 1)
                       <a class="btn btn-outline-success" href="/coupons/inactive/{{ $c->coupon_id }}">
                         <i class="fas fa-toggle-on" title="Clique para Inativar"></i>
                       </a>
@@ -73,9 +73,9 @@
               </tr>
 
               {{-- Modal --}}
-                {{-- <div class="modal fade" id="edit{{ $dp->delivery_person_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $dp->delivery_person_id }}" aria-hidden="true">
+                <div class="modal fade" id="edit{{ $c->coupon_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $c->coupon_id }}" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <form role="form" action="{{ route('deliperson_update') }}" method="post">
+                    <form role="form" action="{{ route('c_update') }}" method="post">
                       
                       <div class="modal-content">
                       <div class="modal-header">
@@ -91,15 +91,34 @@
                         <!-- form start -->
                           @csrf
                           <div class="card-body">
+
                             <div class="form-group">
-                              <label for="category_name">Nome do entregador</label>
-                              <input type="text" class="form-control" id="delivery_person_name" name="delivery_person_name" value="{{ $dp->delivery_person_name }}">
-                              <input type="hidden" class="form-control" id="delivery_person_id" name="delivery_person_id" value="{{ $dp->delivery_person_id }}">
+                              <label for="coupon_code">Nome do código</label>
+                              <input type="text" class="form-control" id="coupon_code" name="coupon_code" placeholder="Código" value="{{ $c->coupon_code }}">
+                              <input type="hidden" class="form-control" id="coupon_id" name="coupon_id" value="{{ $c->coupon_id }}">
                             </div>
                             <div class="form-group">
-                              <label for="delivery_person_phone_number">Telefone</label>
-                              <input type="number" class="form-control" id="delivery_person_phone_number" name="delivery_person_phone_number" value="{{ $dp->delivery_person_phone_number }}">
+                              <label for="coupon_value">Valor de desconto</label>
+                              <input type="number" class="form-control" id="coupon_value" name="coupon_value" placeholder="Valor" value="{{ $c->coupon_id }}">
                             </div>
+                            <div class="form-group">
+                              <label for="cart_min_value">Valor mínimo do carrinho</label>
+                              <input type="text" class="form-control" id="cart_min_value" name="cart_min_value" placeholder="Valor mínimo" value="{{ $c->coupon_id }}">
+                            </div>
+                            <div class="form-group">
+                              <label for="expired_on">Expira em</label>
+                              <input type="date" class="form-control" id="expired_on" name="expired_on" value="{{ $c->coupon_id }}">
+                            </div>
+              
+                            <div class="form-group">
+                              <label for="coupon_type">Selecionar tipo de cupom</label>
+                              <div class="radio">
+                                <input type="radio" name="coupon_type" value="1"> Porcentagem               
+                                <input type="radio" name="coupon_type" value="0"> Fixado               
+                              </div>
+                            </div>
+          
+                            
                           </div>
                           <!-- /.card-body -->
                       </div>
@@ -111,7 +130,7 @@
                     </form>
                   
                   </div>
-                </div> --}}
+                </div>
                 {{-- End Modal --}}
               @endforeach  
               
