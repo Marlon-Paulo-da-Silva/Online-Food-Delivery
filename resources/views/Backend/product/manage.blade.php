@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Gerenciar Entregadores')
+@section('title', 'Gerenciar Produtos')
 
 @section('content_header')
-<h1>Gerenciar Entregadores</h1>
+<h1>Controle dos produtos</h1>
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
     @endif
     {{-- final do Alerta de sucesso --}}
   <div class="card-header">
-    <h3 class="card-title">Controle dos entregadores</h3>
+    <h3 class="card-title">Controle dos produtos</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
@@ -47,7 +47,7 @@
                 <td class="">{{ $i++ }}</td>
                 <td>{{ $p->product_name }}</td>
                 <td>{{ $p->category_name }}</td>
-                <td><img style="height:60px;" src="/BackEndSourceFile/product_img/{{ $p->product_image }}" alt="{{ $p->product_name }}"></td>
+                <td style="text-align: center;"><img src="/BackEndSourceFile/product_img/{{ $p->product_image }}" alt="{{ $p->product_name }}" style="height:60px; width:60px;" class="img-fluid img-thumbnail"></td>
                 <td>{{ $p->product_detail }}</td>
                 <td>
                       @if($p->product_status == 1)
