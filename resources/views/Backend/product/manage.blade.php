@@ -32,67 +32,50 @@
             <thead>
               <tr role="row">
                 <th>SL</th>
-                <th>Código</th>
-                <th>Valor</th>
-                <th>Tipo</th>
-                <th>Compra min</th>
-                <th>Expira em</th>
-                <th>Adicionado em</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Imagem</th>
+                <th>Detalhe</th>
                 <th>Ação</th>
               </tr>
             </thead>
             <tbody>
               @php($i = 1)
-              @foreach($coupon as $c) 
+              @foreach($products as $p) 
               
               <tr role="row" class="odd">
                 <td class="">{{ $i++ }}</td>
-                <td>{{ $c->coupon_code }}</td>
+                <td>{{ $p->product_name }}</td>
+                <td>{{ $p->category_name }}</td>
+                <td><img style="height:60px;" src="/BackEndSourceFile/product_img/{{ $p->product_image }}" alt="{{ $p->product_name }}"></td>
+                <td>{{ $p->product_detail }}</td>
                 <td>
-                  @if($c->coupon_type == 1)
-                    {{ $c->coupon_value }}%
-                  @else
-                    R$ {{ $c->coupon_value }}
-                  @endif
-                </td>
-                <td class="sorting_1">
-                  @if($c->coupon_type == 1)
-                    Porcentagem
-                  @else
-                    Valor Fixo
-                  @endif
-                
-                </td>
-                <td class="sorting_1">R$ {{ $c->cart_min_value }}</td>
-                <td class="sorting_1">{{ $c->expired_on }}</td>
-                <td>{{ $c->added_on }}</td>
-                <td>
-                      @if($c->coupon_status == 1)
-                      <a class="btn btn-outline-success" href="/coupons/inactive/{{ $c->coupon_id }}">
+                      @if($p->product_status == 1)
+                      <a class="btn btn-outline-success" href="/products/inactive/{{ $p->product_id }}">
                         <i class="fas fa-toggle-on" title="Clique para Inativar"></i>
                       </a>
                       @else
-                      <a class="btn btn-outline-light" href="/coupons/active/{{ $c->coupon_id }}">
+                      <a class="btn btn-outline-light" href="/products/active/{{ $p->product_id }}">
                         <i class="fas fa-toggle-off" title="Clique para Ativar"></i>
                       </a>
                       @endif
-                      <a type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $c->coupon_id }}">
+                      <a type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit{{ $p->product_id }}">
                         <i class="fas fa-edit" title="Clique para editar"></i>
                       </a>
-                      <a class="btn btn-outline-danger" href="/coupons/delete/{{ $c->coupon_id }}">
+                      <a class="btn btn-outline-danger" href="/products/delete/{{ $p->product_id }}">
                        <i class="fas fa-trash" title="Clique para apagar"></i>
                       </a>
                 </td>
               </tr>
 
               {{-- Modal --}}
-                <div class="modal fade" id="edit{{ $c->coupon_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $c->coupon_id }}" aria-hidden="true">
+                <div class="modal fade" id="edit{{ $p->product_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $p->product_id }}" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <form role="form" action="{{ route('c_update') }}" method="post">
+                    <form role="form" action="{{ route('p_update') }}" method="post">
                       
                       <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Alterar Cupom</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Alterar Produto</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -106,30 +89,37 @@
                           <div class="card-body">
 
                             <div class="form-group">
-                              <label for="coupon_code">Nome do código</label>
-                              <input type="text" class="form-control" id="coupon_code" name="coupon_code" placeholder="Código" value="{{ $c->coupon_code }}">
-                              <input type="hidden" class="form-control" id="coupon_id" name="coupon_id" value="{{ $c->coupon_id }}">
+                              <label for="product_name">Nome do produto</label>
+                              <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Nome do produto" value="{{ $p->product_name }}">
+                              <input type="hidden" class="form-control" id="product_id" name="product_id" value="{{ $p->product_id }}">
                             </div>
                             <div class="form-group">
-                              <label for="coupon_value">Valor de desconto</label>
-                              <input type="number" class="form-control" id="coupon_value" name="coupon_value" placeholder="Valor" value="{{ $c->coupon_value }}">
+                              <label>Categoria</label>
+                              <select name="category_id" id="category_id" class="form-control">
+                                {{-- <option>{{ $categories->category_id }}</option>
+                                @foreach($categories as $cate)
+                                <option value={{ $cate->category_id }}>{{ $cate->category_name }}</option>
+                                @endforeach --}}
+                              </select>
                             </div>
                             <div class="form-group">
-                              <label for="cart_min_value">Valor mínimo do carrinho</label>
-                              <input type="text" class="form-control" id="cart_min_value" name="cart_min_value" placeholder="Valor mínimo" value="{{ $c->cart_min_value }}">
+                              <label for="product_detail">Detalhe do produto</label>
+                              <textarea type="text" name="product_detail" id="product_detail" class="form-control" rows="5"></textarea>
                             </div>
                             <div class="form-group">
-                              <label for="expired_on">Expira em</label>
-                              <input type="date" class="form-control" id="expired_on" name="expired_on" value="{{ $c->expired_on }}">
+                              <label>imagem do produto</label>
+                              <input type="file" class="form-control" id="product_image" name="product_image">
                             </div>
-              
+                            
+                               
                             <div class="form-group">
-                              <label for="coupon_type">Selecionar tipo de cupom</label>
+                              <label for="product_status">Status do produto</label>
                               <div class="radio">
-                                <input type="radio" name="coupon_type" value="1"> Porcentagem               
-                                <input type="radio" name="coupon_type" value="0"> Fixado               
+                                <input type="radio" name="product_status" value="1">Ativo               
+                                <input type="radio" name="product_status" value="0">Inativo               
                               </div>
                             </div>
+                          </div>
           
                             
                           </div>
@@ -151,12 +141,10 @@
             <tfoot>
               <tr>
                 <th>SL</th>
-                <th>Código</th>
-                <th>Valor</th>
-                <th>Tipo</th>
-                <th>Compra min</th>
-                <th>Expira em</th>
-                <th>Adicionado em</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Imagem</th>
+                <th>Detalhe</th>
                 <th>Ação</th>
               </tr>
             </tfoot>

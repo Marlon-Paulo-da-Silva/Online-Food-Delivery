@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Category;
+use DB;
 
 class ProductController extends Controller
 {
@@ -55,51 +56,72 @@ class ProductController extends Controller
     
     public function product_manage (){
 
-        $deliveryperson = Product::all();
+        $categories = Category::where('category_status', 1)->get();
 
-        return view('Backend.product.manage', compact('deliveryperson'));
+
+
+        $products = DB::table('products')
+            ->join('categories','products.category_id','=','categories.category_id')
+            ->select('products.*','categories.category_name')
+            ->get();
+
+        return view('Backend.product.manage', compact('products'));
     }
     
-    public function product_delete ($deliveryperson_id){
+    public function product_delete ($product_id){
 
-        $deliveryperson = Product::find($deliveryperson_id);
+        $products = Product::find($product_id);
 
-        $deliveryperson->delete();
+        $products->delete();
 
-        return back()->with('sms', 'Cadastro do entregador deletado');
+        return back()->with('sms', 'Produto deletado');
     }
 
-    public function product_inactive ($deliveryperson_id){
+    public function product_inactive ($product_id){
 
-        $deliveryperson = Product::find($deliveryperson_id);
+        $products = Product::find($product_id);
 
-        $deliveryperson->delivery_person_status = 0;
+        $products->product_status = 0;
         
-        $deliveryperson->save();
+        $products->save();
 
         return back();
     }
 
-    public function product_active ($deliveryperson_id){
+    public function product_active ($product_id){
 
-        $deliveryperson = Product::find($deliveryperson_id);
+        $products = Product::find($product_id);
 
-        $deliveryperson->delivery_person_status = 1;
+        $products->product_status = 1;
         
-        $deliveryperson->save();
+        $products->save();
 
         return back();
     }
 
     public function product_update (Request $request){
 
-        $deliveryperson = Product::find($request->delivery_person_id);
+        $products = Product::find($request->product_id);
 
-        $deliveryperson->delivery_person_name = $request->delivery_person_name;
+        $product->product_name = $request->product_name;
+        $product->category_id = $request->category_id;
+        $product->product_detail = $request->product_detail;
+        $product->product_status = $request->product_status;
         
-        $deliveryperson->delivery_person_phone_number = $request->delivery_person_phone_number;
-        
-        $deliveryperson->save();
+        if($request->hasFile('product_image') && $request->file('product_image')->isValid()){
+            $requestImage = $request->product_image;
+
+            $extension = $requestImage->getClientOriginalExtension();
+
+
+            $imageName =  md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
+
+            $requestImage->move(public_path('BackEndSourceFile/product_img'), $imageName);
+
+            $product->product_image = $imageName;
+        }
+
+        $product->save();
 
         return redirect('/products/manage')->with('sms', 'Cadastro do produto atualizado');
     }
