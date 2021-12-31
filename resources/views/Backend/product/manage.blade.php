@@ -96,19 +96,20 @@
                             <div class="form-group">
                               <label>Categoria</label>
                               <select name="category_id" id="category_id" class="form-control">
-                                {{-- <option>{{ $categories->category_id }}</option>
+                                <option value={{ $p->category_id }}>{{ $p->category_name }}</option>
                                 @foreach($categories as $cate)
                                 <option value={{ $cate->category_id }}>{{ $cate->category_name }}</option>
-                                @endforeach --}}
+                                @endforeach
                               </select>
                             </div>
                             <div class="form-group">
                               <label for="product_detail">Detalhe do produto</label>
-                              <textarea type="text" name="product_detail" id="product_detail" class="form-control" rows="5"></textarea>
+                              <textarea type="text" name="product_detail" id="product_detail" class="form-control" rows="5">{{ $p->product_detail }}</textarea>
                             </div>
                             <div class="form-group">
                               <label>imagem do produto</label>
-                              <input type="file" class="form-control" id="product_image" name="product_image">
+                              <img src="{{ asset('/BackEndSourceFile/product_img/'.$p->product_image) }}" style="height: 150px; width: 150px; border-radius: 50% ">
+                              <input type="file" class="form-control" id="product_image" name="product_image" accept="image/*">
                             </div>
                             
                                
@@ -119,7 +120,6 @@
                                 <input type="radio" name="product_status" value="0">Inativo               
                               </div>
                             </div>
-                          </div>
           
                             
                           </div>

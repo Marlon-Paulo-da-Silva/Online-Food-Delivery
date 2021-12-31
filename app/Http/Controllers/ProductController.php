@@ -65,7 +65,7 @@ class ProductController extends Controller
             ->select('products.*','categories.category_name')
             ->get();
 
-        return view('Backend.product.manage', compact('products'));
+        return view('Backend.product.manage', compact('products','categories'));
     }
     
     public function product_delete ($product_id){
