@@ -17,24 +17,39 @@ class ProductController extends Controller
     }
     
     public function product_save (Request $request){
-
-        $imgName = $request->file('product_image');
-        $image = $imgName->getClientOriginalName();
-        $directory = 'BackEndSourceFile/product_img';
-        $imgUrl = $directory.$image;
-        $imgName->move($directory.$image);
-
-
         $product = new Product();
 
+        // $imgName = $request->file('product_image');
+        // $image = $imgName->getClientOriginalName();
+        // $directory = 'BackEndSourceFile/product_img/';
+        // $imgUrl = $directory.$image;
+        // $imgName->move($directory.$image);
+
+        // Image upload
+
+        
+        
+        
         $product->product_name = $request->product_name;
         $product->category_id = $request->category_id;
         $product->product_detail = $request->product_detail;
-        $product->product_image = $imgUrl;
         $product->product_status = $request->product_status;
         
-        $product->save();
+        if($request->hasFile('product_image') && $request->file('product_image')->isValid()){
+            $requestImage = $request->product_image;
 
+            $extension = $requestImage->getClientOriginalExtension();
+
+
+            $imageName =  md5($requestImage->getClientOriginalName()) . strtotime("now") . "." . $extension;
+
+            $requestImage->move(public_path('BackEndSourceFile/product_img'), $imageName);
+
+            $product->product_image = $imageName;
+        }
+
+        $product->save();
+        
         return back()->with('sms', 'Produto Salvo');
     }
     
