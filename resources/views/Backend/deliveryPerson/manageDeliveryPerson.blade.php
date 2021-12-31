@@ -67,12 +67,13 @@
               </tr>
 
               {{-- Modal --}}
-                {{-- <div class="modal fade" id="edit{{ $dp->delivery_person_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $dp->delivery_person_id }}" aria-hidden="true">
+                <div class="modal fade" id="edit{{ $dp->delivery_person_id }}" tabindex="-1" role="dialog" aria-labelledby="edit{{ $dp->delivery_person_id }}" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <form role="form" action="{{ route('cate_update') }}" method="post">
-                    <div class="modal-content">
+                    <form role="form" action="{{ route('deliperson_update') }}" method="post">
+                      
+                      <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Alterar Categoria</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Alterar Entregador</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -87,11 +88,11 @@
                             <div class="form-group">
                               <label for="category_name">Nome do entregador</label>
                               <input type="text" class="form-control" id="delivery_person_name" name="delivery_person_name" value="{{ $dp->delivery_person_name }}">
-                              <input type="hidden" class="form-control" id="category_id" name="category_id" value="{{ $cate->category_id }}">
+                              <input type="hidden" class="form-control" id="delivery_person_id" name="delivery_person_id" value="{{ $dp->delivery_person_id }}">
                             </div>
                             <div class="form-group">
-                              <label for="ordem">Numero de ordem</label>
-                              <input type="number" class="form-control" id="ordem" name="order_number" value="{{ $cate->order_number }}">
+                              <label for="delivery_person_phone_number">Telefone</label>
+                              <input type="number" class="form-control" id="delivery_person_phone_number" name="delivery_person_phone_number" value="{{ $dp->delivery_person_phone_number }}">
                             </div>
                           </div>
                           <!-- /.card-body -->
@@ -104,7 +105,7 @@
                     </form>
                   
                   </div>
-                </div> --}}
+                </div>
                 {{-- End Modal --}}
               @endforeach  
               
@@ -112,9 +113,9 @@
             <tfoot>
               <tr>
                 <th>SL</th>
-                <th>Nome da Categoria</th>
-                <th>Número da Ordem</th>
-                <th>Data de confirmação</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Criado em</th>
                 <th>Ação</th>
               </tr>
             </tfoot>

@@ -33,7 +33,7 @@ class deliveryPersonController extends Controller
         return view('Backend.deliveryPerson.manageDeliveryPerson', compact('deliveryperson'));
     }
     
-    public function deliveryperson_delete ($deliveryperson_id){
+    public function dp_delete ($deliveryperson_id){
 
         $deliveryperson = Delivery_person::find($deliveryperson_id);
 
@@ -62,6 +62,19 @@ class deliveryPersonController extends Controller
         $deliveryperson->save();
 
         return back();
+    }
+
+    public function dp_update (Request $request){
+
+        $deliveryperson = Delivery_person::find($request->delivery_person_id);
+
+        $deliveryperson->delivery_person_name = $request->delivery_person_name;
+        
+        $deliveryperson->delivery_person_phone_number = $request->delivery_person_phone_number;
+        
+        $deliveryperson->save();
+
+        return redirect('/deliveryperson/manage')->with('sms', $request->deliveryperson_id);
     }
 
 

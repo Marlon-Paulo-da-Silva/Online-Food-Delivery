@@ -53,7 +53,7 @@ Route::get('/deliveryperson/manage', [DeliveryPersonController::class, 'delivery
 Route::get('/deliveryperson/active/{id}', [DeliveryPersonController::class, 'dp_active'])->name('deliperson_active');
 Route::get('/deliveryperson/inactive/{id}', [DeliveryPersonController::class, 'dp_inactive'])->name('deliperson_inactive');
 Route::get('/deliveryperson/delete/{deliveryperson_id}', [DeliveryPersonController::class, 'dp_delete'])->name('deliperson_delete');
-// Route::post('/deliveryperson/update', [CategoryController::class, 'dp_update'])->name('deliperson_update');
+Route::post('/deliveryperson/update', [DeliveryPersonController::class, 'dp_update'])->name('deliperson_update');
 
 /* End DeliveryPerson */
 
