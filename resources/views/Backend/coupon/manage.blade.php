@@ -48,9 +48,22 @@
               <tr role="row" class="odd">
                 <td class="">{{ $i++ }}</td>
                 <td>{{ $c->coupon_code }}</td>
-                <td>{{ $c->coupon_value }}</td>
-                <td class="sorting_1">{{ $c->coupon_type }}</td>
-                <td class="sorting_1">{{ $c->cart_min_value }}</td>
+                <td>
+                  @if($c->coupon_type == 1)
+                    {{ $c->coupon_value }}%
+                  @else
+                    R$ {{ $c->coupon_value }}
+                  @endif
+                </td>
+                <td class="sorting_1">
+                  @if($c->coupon_type == 1)
+                    Porcentagem
+                  @else
+                    Valor Fixo
+                  @endif
+                
+                </td>
+                <td class="sorting_1">R$ {{ $c->cart_min_value }}</td>
                 <td class="sorting_1">{{ $c->expired_on }}</td>
                 <td>{{ $c->added_on }}</td>
                 <td>
@@ -99,15 +112,15 @@
                             </div>
                             <div class="form-group">
                               <label for="coupon_value">Valor de desconto</label>
-                              <input type="number" class="form-control" id="coupon_value" name="coupon_value" placeholder="Valor" value="{{ $c->coupon_id }}">
+                              <input type="number" class="form-control" id="coupon_value" name="coupon_value" placeholder="Valor" value="{{ $c->coupon_value }}">
                             </div>
                             <div class="form-group">
                               <label for="cart_min_value">Valor mínimo do carrinho</label>
-                              <input type="text" class="form-control" id="cart_min_value" name="cart_min_value" placeholder="Valor mínimo" value="{{ $c->coupon_id }}">
+                              <input type="text" class="form-control" id="cart_min_value" name="cart_min_value" placeholder="Valor mínimo" value="{{ $c->cart_min_value }}">
                             </div>
                             <div class="form-group">
                               <label for="expired_on">Expira em</label>
-                              <input type="date" class="form-control" id="expired_on" name="expired_on" value="{{ $c->coupon_id }}">
+                              <input type="date" class="form-control" id="expired_on" name="expired_on" value="{{ $c->expired_on }}">
                             </div>
               
                             <div class="form-group">
