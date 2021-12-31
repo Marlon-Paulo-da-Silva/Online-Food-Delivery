@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeliveryPersonController;
+use App\Http\Controllers\CouponsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +58,17 @@ Route::post('/deliveryperson/update', [DeliveryPersonController::class, 'dp_upda
 
 /* End DeliveryPerson */
 
+// Crud Coupons
 
+Route::get('/coupons/add', [CouponsController::class, 'index'])->name('show_c_table')->middleware('auth');
+Route::post('/coupons/save', [CouponsController::class, 'coupon_save'])->name('c_save')->middleware('auth');
+Route::get('/coupons/manage', [CouponsController::class, 'coupon_manage'])->name('c_manager')->middleware('auth');
+
+
+Route::get('/coupons/active/{id}', [CouponsController::class, 'coupon_active'])->name('c_active');
+Route::get('/coupons/inactive/{id}', [CouponsController::class, 'coupon_inactive'])->name('c_inactive');
+Route::get('/coupons/delete/{coupon_id}', [CouponsController::class, 'coupon_delete'])->name('c_delete');
+Route::post('/coupons/update', [CouponsController::class, 'coupon_update'])->name('c_update');
+
+/* End Coupons */
 
