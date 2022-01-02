@@ -60,7 +60,32 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="card">
+                  <div class="card-header" title="Você pode pular isso">Atributos do produto</div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" name="full" placeholder="Nome Completo" required>
+                        </div>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" name="price" placeholder="Preço" required>
+                        </div>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" name="half" placeholder="Preço sMédio" required>
+                        </div>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" name="price_2" placeholder="2º Valor" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <!-- /.card-body -->
+
+
 
                 <div class="card-footer">
                   <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Salvar</button>
