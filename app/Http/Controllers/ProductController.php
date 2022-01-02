@@ -47,6 +47,8 @@ class ProductController extends Controller
             $requestImage->move(public_path('BackEndSourceFile/product_img'), $imageName);
 
             $product->product_image = $imageName;
+        }else {
+            $product->product_image = "product-no-image.jpg";
         }
 
         $product->save();
@@ -119,7 +121,7 @@ class ProductController extends Controller
             $requestImage->move(public_path('BackEndSourceFile/product_img'), $imageName);
 
             $product->product_image = $imageName;
-        }
+        } 
 
         $product->save();
 
