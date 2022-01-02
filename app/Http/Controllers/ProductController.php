@@ -108,7 +108,6 @@ class ProductController extends Controller
         $product->product_name = $request->product_name;
         $product->category_id = $request->category_id;
         $product->product_detail = $request->product_detail;
-        $product->product_status = $request->product_status;
         
         if($request->hasFile('product_image') && $request->file('product_image')->isValid()){
             $requestImage = $request->product_image;

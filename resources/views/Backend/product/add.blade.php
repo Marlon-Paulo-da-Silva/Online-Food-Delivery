@@ -36,7 +36,7 @@
                   <div class="form-group">
                     <label>Categoria</label>
                     <select name="category_id" id="category_id" class="form-control">
-                      <option>>---Selecione a categoria---<</option>
+                      <option>>--- Selecione a categoria ---<</option>
                       @foreach($categories as $cate)
                       <option value={{ $cate->category_id }}>{{ $cate->category_name }}</option>
                       @endforeach
@@ -55,8 +55,8 @@
                   <div class="form-group">
                     <label for="product_status">Status do produto</label>
                     <div class="radio">
-                      <input type="radio" name="product_status" value="1">Ativo               
-                      <input type="radio" name="product_status" value="0">Inativo               
+                      <input type="radio" name="product_status" checked value="1"> Ativo<br/>                 
+                      <input type="radio" name="product_status" value="0"> Inativo               
                     </div>
                   </div>
                 </div>
