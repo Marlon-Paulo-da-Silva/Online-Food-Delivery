@@ -120,6 +120,32 @@
                                 <input type="radio" name="product_status" value="0">Inativo               
                               </div>
                             </div>
+
+                            <div class="card">
+                              <div class="card-header" title="Você pode pular isso">Atributos do produto</div>
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <label for="full">Nome completo</label>
+                                      <input type="text" class="form-control" name="full" value="{{ $p->full }}">
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="full_price">Preço cheio</label>
+                                      <input type="text" class="form-control" name="full_price" value="{{ $p->full_price }}">
+                                    </div>
+                                    <div class="col-md-6 mt-2">
+                                      <label for="half">Nome curto</label>
+                                      <input type="text" class="form-control" name="half" value="{{ $p->half }}">
+                                    </div>
+                                    <div class="col-md-6 mt-2">
+                                      <label for="half_price">Preço na promoção</label>
+                                      <input type="text" class="form-control" name="half_price" value="{{ $p->half_price  }}">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
           
                             
                           </div>
