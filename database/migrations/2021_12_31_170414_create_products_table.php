@@ -20,6 +20,10 @@ class CreateProductsTable extends Migration
             $table->longText('product_detail');
             $table->text('product_image');
             $table->integer('product_status');
+            $table->string('full')->nullable();
+            $table->float('full_price', 10, 2)->nullable();
+            $table->string('half')->nullable();
+            $table->float('half_price', 10, 2)->nullable();
 
             $table->timestamps();
         });

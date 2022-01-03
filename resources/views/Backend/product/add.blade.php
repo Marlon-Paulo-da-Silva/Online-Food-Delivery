@@ -67,16 +67,16 @@
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-6">
-                          <input type="text" class="form-control" name="full" placeholder="Nome Completo" required>
+                          <input type="text" class="form-control" name="full" placeholder="Nome Completo">
                         </div>
                         <div class="col-md-6">
-                          <input type="text" class="form-control" name="price" placeholder="Preço" required>
+                          <input type="text" class="form-control" name="full_price" placeholder="Preço" >
                         </div>
-                        <div class="col-md-6">
-                          <input type="text" class="form-control" name="half" placeholder="Preço sMédio" required>
+                        <div class="col-md-6 mt-2">
+                          <input type="text" class="form-control" name="half" placeholder="Preço sMédio">
                         </div>
-                        <div class="col-md-6">
-                          <input type="text" class="form-control" name="price_2" placeholder="2º Valor" required>
+                        <div class="col-md-6 mt-2">
+                          <input type="text" class="form-control" name="half_price" placeholder="2º Valor">
                         </div>
                       </div>
                     </div>

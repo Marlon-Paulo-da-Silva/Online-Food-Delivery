@@ -35,7 +35,12 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->product_detail = $request->product_detail;
         $product->product_status = $request->product_status;
-        
+        $product->full = $request->full;
+        $product->full_price = $request->full_price;
+        $product->half = $request->half;
+        $product->half_price = $request->half_price;
+
+           
         if($request->hasFile('product_image') && $request->file('product_image')->isValid()){
             $requestImage = $request->product_image;
 

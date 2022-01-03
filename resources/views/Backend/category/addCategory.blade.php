@@ -45,7 +45,7 @@
                   <div class="form-group">
                     <label for="added_on">Status da Categoria</label>
                     <div class="radio">
-                      <input type="radio" name="category_status" value="1">Ativo               
+                      <input type="radio" name="category_status" checked value="1">Ativo               
                       <input type="radio" name="category_status" value="0">Inativo               
                     </div>
                   </div>
@@ -53,7 +53,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Salvar</button>
+                  <button type="submit" name="btn" class="btn btn-outline-warning btn-block">Salvar</button>
                 </div>
               </form>
             </div>
