@@ -1,1 +1,4 @@
-<h1>Marlon Paulo</h1>
+@extends('FrontEnd.master')
+@section('title')
+    Home
+@endsection
