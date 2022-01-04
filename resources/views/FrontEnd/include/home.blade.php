@@ -88,11 +88,27 @@
                 <i class="fas fa-star"></i>
                 <i class="far fa-star"></i>
             </div>
-          <a href="#" class="btn">order now</a>
-          @endforeach
+            <a href="#" class="btn">order now</a>
+          </div>
+            @endforeach
+          @foreach ($products as $p)
+          <div class="box">
+            <span class="price"> $5 - $20 </span>
+            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-1.jpg" alt="">
+            <h3>{{ $p->product_name }}</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+          </div>
+            @endforeach
             
-        {{-- </div>
-        <div class="box">
+         </div>
+        {{--<div class="box">
             <span class="price"> $5 - $20 </span>
             <img src="{{ asset('/') }}FrontEndSourceFile/images/p-2.jpg" alt="">
             <h3>tasty cakes</h3>
