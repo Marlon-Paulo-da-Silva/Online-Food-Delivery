@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--Css Custom -->
-    <link rel="stylesheet" href="{{ asset('/') }}FrontEndSourceFile/css/style.css">
+    <link rel="stylesheet" href="{{ secure_asset('/') }}FrontEndSourceFile/css/style.css">
 </head>
   <body>
     <!-- Header -->
