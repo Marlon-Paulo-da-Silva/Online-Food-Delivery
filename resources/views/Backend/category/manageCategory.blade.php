@@ -20,7 +20,7 @@
     @endif
     {{-- final do Alerta de sucesso --}}
   <div class="card-header">
-    <h3 class="card-title">DataTable with default features</h3>
+    <h3 class="card-title">Tabela com os dados das categorias</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">

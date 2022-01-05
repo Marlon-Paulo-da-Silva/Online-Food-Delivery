@@ -20,7 +20,7 @@
     @endif
     {{-- final do Alerta de sucesso --}}
   <div class="card-header">
-    <h3 class="card-title">Controle dos entregadores</h3>
+    <h3 class="card-title">Controle dos cupons</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
