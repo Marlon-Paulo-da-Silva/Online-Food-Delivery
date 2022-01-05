@@ -18,7 +18,7 @@
     </div>
 
     <div class="image">
-        <img src="{{ asset('/') }}FrontEndSourceFile/images/home-img.png" alt="" srcset="">
+        <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/home-img.png" alt="" srcset="">
     </div>
 
    </section>
@@ -35,9 +35,9 @@
              <h1>{{ $cat->category_name }}</h1>
          @endforeach --}}
            <div class="box">
-               <img class="image" src="{{ asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
+               <img class="image" src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
                <div class="content">
-                   <img src="{{ asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
+                   <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
                    <h3>Hambúrguer saboroso</h3>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, iste fugit rem sed eum mollitia voluptates corporis esse dolor totam molestias ad dicta saepe officiis libero quos magni maxime harum?
                     </p>
@@ -45,9 +45,9 @@
                </div>
            </div>
            <div class="box">
-               <img class="image" src="{{ asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
+               <img class="image" src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
                <div class="content">
-                   <img src="{{ asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
+                   <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
                    <h3>Hambúrguer saboroso</h3>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, iste fugit rem sed eum mollitia voluptates corporis esse dolor totam molestias ad dicta saepe officiis libero quos magni maxime harum?
                     </p>
@@ -55,9 +55,9 @@
                </div>
            </div>
            <div class="box">
-               <img class="image" src="{{ asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
+               <img class="image" src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-img-1.jpg" alt="">
                <div class="content">
-                   <img src="{{ asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
+                   <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/s-1.png" alt="">
                    <h3>Hambúrguer saboroso</h3>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, iste fugit rem sed eum mollitia voluptates corporis esse dolor totam molestias ad dicta saepe officiis libero quos magni maxime harum?
                     </p>
@@ -79,7 +79,7 @@
           @foreach ($products as $p)
           <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-1.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-1.jpg" alt="">
             <h3>{{ $p->product_name }}</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -94,7 +94,7 @@
           @foreach ($products as $p)
           <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-1.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-1.jpg" alt="">
             <h3>{{ $p->product_name }}</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -110,7 +110,7 @@
          </div>
         {{--<div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-2.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-2.jpg" alt="">
             <h3>tasty cakes</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -123,7 +123,7 @@
         </div>
         <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-3.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-3.jpg" alt="">
             <h3>tasty sweets</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -136,7 +136,7 @@
         </div>
         <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-4.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-4.jpg" alt="">
             <h3>tasty cupcakes</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -149,7 +149,7 @@
         </div>
         <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-5.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-5.jpg" alt="">
             <h3>cold drinks</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -162,7 +162,7 @@
         </div>
         <div class="box">
             <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/p-6.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/p-6.jpg" alt="">
             <h3>cold ice-cream</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -189,19 +189,19 @@
     <section class="steps">
 
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/step-1.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/step-1.jpg" alt="">
             <h3>escolha sua comida favorita</h3>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/step-2.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/step-2.jpg" alt="">
             <h3>frete grátis e rápido</h3>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/step-3.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/step-3.jpg" alt="">
             <h3>pagamento facilitado</h3>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/step-4.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/step-4.jpg" alt="">
             <h3>e aproveite !!!</h3>
         </div>
     
@@ -220,7 +220,7 @@
     <div class="box-container">
 
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-1.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-1.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -228,7 +228,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-2.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-2.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -236,7 +236,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-3.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-3.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -244,7 +244,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-4.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-4.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -252,7 +252,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-5.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-5.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -260,7 +260,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-6.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-6.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -268,7 +268,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-7.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-7.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -276,7 +276,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-8.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-8.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -284,7 +284,7 @@
             </div>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/g-9.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/g-9.jpg" alt="">
             <div class="content">
                 <h3>tasty food</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
@@ -307,7 +307,7 @@
     <div class="box-container">
 
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/pic1.png" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/pic1.png" alt="">
             <h3>john deo</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -319,7 +319,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/pic2.png" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/pic2.png" alt="">
             <h3>john deo</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -331,7 +331,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
         </div>
         <div class="box">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/pic3.png" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/pic3.png" alt="">
             <h3>john deo</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
@@ -358,7 +358,7 @@
     <div class="row">
         
         <div class="image">
-            <img src="{{ asset('/') }}FrontEndSourceFile/images/order-img.jpg" alt="">
+            <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/order-img.jpg" alt="">
         </div>
 
         <form action="">

@@ -26,12 +26,12 @@
 
     <!-- loader  -->
     <div class="loader-container">
-        <img src="{{ asset('/') }}FrontEndSourceFile/images/loader.gif" alt="">
+        <img src="{{ secure_asset('/') }}FrontEndSourceFile/images/loader.gif" alt="">
     </div>
         
 
 
         <!-- custom js file link -->
-        <script src="{{ asset('/') }}FrontEndSourceFile/js/script.js"></script>
+        <script src="{{ secure_asset('/') }}FrontEndSourceFile/js/script.js"></script>
   </body>
 </html>
